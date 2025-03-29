@@ -3,38 +3,34 @@ name: Publish to npm
 on:
   push:
     tags:
-      - "v*"  # 监听 v 开头的 tag（如 v1.0.0）
+      - "v*"  # 只有打 tag 时触发（如 v1.0.0）
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write  # 确保有 npm 发布权限
+      packages: write  # 必须要有 npm 发布权限
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 获取完整 git 历史（某些包需要）
+          fetch-depth: 0  # 获取完整 git 历史（某些包需要版本信息）
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
-
-      - name: Configure npm authentication
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
-          echo "always-auth=true" >> ~/.npmrc
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile  # 锁定依赖版本
+        run: npm ci  # 严格按 lockfile 安装
 
       - name: Build (if needed)
-        run: bun run build  # 如果有构建步骤
+        run: npm run build --if-present  # 如果有 build 脚本则运行
 
       - name: Publish to npm
-        run: bun publish
+        run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # 双重认证保障
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # 关键认证配置
