@@ -21,7 +21,7 @@ program
     `));
 
     console.log(`
-  ${colors.primary('快捷命令:')}
+  ${colors.normal('快捷命令:')}
   ${colors.command('bni <package>')}   install package
   ${colors.command('bnr <package>')}   remove package
     `);
