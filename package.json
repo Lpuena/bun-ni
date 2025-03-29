@@ -1,7 +1,7 @@
 {
   "name": "bun-ni",
   "type": "module",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": "false",
   "description": "A smart package manager that auto-detects your package manager",
   "author": "Lpuena",
@@ -14,7 +14,12 @@
   "bugs": {
     "url": "https://github.com/Lpuena/bun-ni/issues"
   },
-  "keywords": ["bun", "ni", "package-manager", "cli"],
+  "keywords": [
+    "bun",
+    "ni",
+    "package-manager",
+    "cli"
+  ],
   "module": "index.ts",
   "bin": {
     "bn": "./src/main.ts",
