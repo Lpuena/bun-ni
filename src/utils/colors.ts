@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import chalk from 'chalk'
 
 export const colors = {
   primary: chalk.hex('#f472b6').bold,
@@ -7,5 +7,5 @@ export const colors = {
   error: chalk.red.bold,
   command: chalk.cyan.bold,
   highlight: chalk.blue.bold,
-  normal:chalk.gray.bold
-};
+  normal: chalk.gray.bold,
+}
