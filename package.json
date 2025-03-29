@@ -1,7 +1,7 @@
 {
   "name": "bun-ni",
   "type": "module",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": "false",
   "description": "A smart package manager that auto-detects your package manager",
   "author": "Lpuena",
