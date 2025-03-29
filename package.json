@@ -23,9 +23,12 @@
   "module": "index.ts",
   "bin": {
     "bn": "./src/main.ts",
-    "bni": "./src/commands/install.ts",
-    "bnr": "./src/commands/remove.ts"
+    "bi": "./src/commands/install.ts",
+    "br": "./src/commands/remove.ts"
   },
+  "files": [
+    "src/**/*.ts"
+  ],
   "engines": {
     "bun": ">=1.0.0"
   },

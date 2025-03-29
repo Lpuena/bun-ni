@@ -1,4 +1,7 @@
 # Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
+
+# test files
+.test*
 1.html
 # Logs
 

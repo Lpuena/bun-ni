@@ -24,8 +24,8 @@ program
 
     console.log(`
   ${colors.normal('快捷命令:')}
-  ${colors.command('bni <package>')}   install package
-  ${colors.command('bnr <package>')}   remove package
+  ${colors.command('bi <package>')}   install package
+  ${colors.command('br <package>')}   remove package
     `)
   })
 
@@ -34,8 +34,8 @@ program.addHelpText(
   'afterAll',
   `
 ${colors.primary('示例:')}
-  ${colors.command('bni lodash')}      使用自动检测的包管理器安装 lodash
-  ${colors.command('bnr lodash')}      移除 lodash
+  ${colors.command('bi lodash')}      使用自动检测的包管理器安装 lodash
+  ${colors.command('br lodash')}      移除 lodash
 `,
 )
 
