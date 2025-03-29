@@ -1,8 +1,25 @@
 {
   "name": "bun-ni",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "module": "index.ts",
   "type": "module",
+  "author": "Lpuena",
+  "description": "A smart package manager that auto-detects your package manager",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lpuena/bun-ni"
+  },
+  "bugs": {
+    "url": "https://github.com/Lpuena/bun-ni/issues"
+  },
+  "homepage": "https://github.com/Lpuena/bun-ni#readme",
+  "keywords": [
+    "bun",
+    "ni",
+    "package-manager",
+    "cli"
+  ],
+  "license": "MIT",
   "bin": {
     "bn": "./src/main.ts",
     "bni": "./src/commands/install.ts",
@@ -20,7 +37,6 @@
   "dependencies": {
     "@inquirer/prompts": "^7.4.0",
     "chalk": "^5.4.1",
-    "commander": "^13.1.0",
-    "enquirer": "^2.4.1"
+    "commander": "^13.1.0"
   }
 }

@@ -1,4 +1,4 @@
-# bun-ni 🚀
+# bun-ni
 
 <p align="center">
   <br>

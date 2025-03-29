@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 
 export const colors = {
-  primary: chalk.hex('#fc7c18').bold,
+  primary: chalk.hex('#f472b6').bold,
   success: chalk.green.bold,
   warning: chalk.yellow.bold,
   error: chalk.red.bold,
