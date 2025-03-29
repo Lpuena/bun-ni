@@ -1,0 +1,26 @@
+{
+  "name": "bun-ni",
+  "version": "0.1.0",
+  "module": "index.ts",
+  "type": "module",
+  "bin": {
+    "bn": "./src/main.ts",
+    "bni": "./src/commands/install.ts",
+    "bnr": "./src/commands/remove.ts"
+  },
+  "scripts": {
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.4.0",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "enquirer": "^2.4.1"
+  }
+}
