@@ -11,11 +11,11 @@
 
 ## 特性亮点
 
-✨ **Bun 原生支持** - 直接使用 Bun 运行时，无需 Node.js 环境  
-🔍 **智能检测** - 自动识别项目使用的包管理器（npm/yarn/pnpm/bun）  
-⚡ **闪电执行** - 利用 Bun 的超高性能执行包管理操作  
-🎨 **友好交互** - 彩色终端输出和确认提示  
-📦 **零配置** - 开箱即用，无需额外配置  
+✨ **Bun 原生支持** - 直接使用 Bun 运行时，无需 Node.js 环境
+🔍 **智能检测** - 自动识别项目使用的包管理器（npm/yarn/pnpm/bun）
+⚡ **闪电执行** - 利用 Bun 的超高性能执行包管理操作
+🎨 **友好交互** - 彩色终端输出和确认提示
+📦 **零配置** - 开箱即用，无需额外配置
 
 ## 安装使用
 
@@ -28,21 +28,21 @@ bun add -g bun-ni
 
 | 命令 | 功能描述 | 示例 |
 |------|----------|------|
-| `bni` | 安装依赖 | `bni lodash` |
-| `bnr` | 移除依赖 | `bnr lodash` |
+| `bi` | 安装依赖 | `bi lodash` |
+| `br` | 移除依赖 | `br lodash` |
 | `bn`  | 显示帮助 | `bn` |
 
 ## 进阶用法
 
 ```bash
 # 安装开发依赖
-bni typescript -D
+bi typescript -D
 
 # 同时安装多个包
-bni lodash @types/node
+bi lodash @types/node
 
 # 移除多个包
-bnr eslint prettier
+br eslint prettier
 ```
 
 ## 技术架构
