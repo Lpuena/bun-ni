@@ -1,7 +1,7 @@
 // src/utils/prompts.ts
-import type { PackageManager, PackageManagerConfig } from '../package-managers'
+import type { PackageManager, PackageManagerConfig } from '../packageManagers'
 import { confirm, select } from '@inquirer/prompts'
-import { packageManagers } from '../package-managers'
+import { packageManagers } from '../packageManagers'
 import { colors } from './colors'
 import { detectLockFile } from './detection'
 

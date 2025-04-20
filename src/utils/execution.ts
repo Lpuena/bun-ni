@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import type { PackageManager } from '../package-managers'
+import type { PackageManager } from '../packageManagers'
 // src/utils/execution.ts
 import { colors } from './colors'
 

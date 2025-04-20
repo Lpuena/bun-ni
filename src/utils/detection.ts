@@ -1,5 +1,5 @@
-import type { PackageManager } from '../package-managers'
-import { packageManagers } from '../package-managers'
+import type { PackageManager } from '../packageManagers'
+import { packageManagers } from '../packageManagers'
 
 /**
  * 检测指定包管理器的锁文件是否存在
