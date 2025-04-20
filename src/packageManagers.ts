@@ -2,10 +2,9 @@ export type PackageManager = 'npm' | 'yarn' | 'pnpm' | 'bun'
 
 interface CommandTemplates {
   install: string
-  /** 添加依赖包 */
   add: string
   devFlag: string
-  remove: string // 新增移除命令
+  remove: string
 }
 
 export interface PackageManagerConfig {
@@ -20,9 +19,9 @@ export const packageManagers: Record<PackageManager, PackageManagerConfig> = {
     command: 'npm',
     commands: {
       install: 'install',
-      add: 'install', // npm 使用 install 添加包
-      devFlag: '--save-dev', // npm 的开发依赖标志
-      remove: 'uninstall', // npm 使用 uninstall 移除包
+      add: 'install',
+      devFlag: '--save-dev',
+      remove: 'uninstall',
     },
   },
   yarn: {
@@ -30,9 +29,9 @@ export const packageManagers: Record<PackageManager, PackageManagerConfig> = {
     command: 'yarn',
     commands: {
       install: 'install',
-      add: 'add', // yarn 使用 add
-      devFlag: '-D', // yarn 的开发依赖标志
-      remove: 'remove', // yarn 使用 remove 移除包
+      add: 'add',
+      devFlag: '-D',
+      remove: 'remove',
     },
   },
   pnpm: {
@@ -40,9 +39,9 @@ export const packageManagers: Record<PackageManager, PackageManagerConfig> = {
     command: 'pnpm',
     commands: {
       install: 'install',
-      add: 'add', // pnpm 使用 add
-      devFlag: '-D', // pnpm 的开发依赖标志
-      remove: 'remove', // pnpm 使用 remove 移除包
+      add: 'add',
+      devFlag: '-D',
+      remove: 'remove',
     },
   },
   bun: {
@@ -50,25 +49,34 @@ export const packageManagers: Record<PackageManager, PackageManagerConfig> = {
     command: 'bun',
     commands: {
       install: 'install',
-      add: 'add', // bun 使用 add
-      devFlag: '-D', // bun 的开发依赖标志
-      remove: 'remove', // bun 使用 remove 移除包
+      add: 'add',
+      devFlag: '-D',
+      remove: 'remove',
     },
   },
 } as const
 
-// 通用命令构建器
-export function buildInstallArgs(
+
+
+// 构建通用命令参数
+export function buildCommandArgs(
   manager: PackageManager,
+  commandType: 'install' | 'remove',
   packages: string[],
-  options: { dev?: boolean, global?: boolean },
+  options: { dev?: boolean } = {},
 ): string[] {
   const { commands } = packageManagers[manager]
 
-  if (packages.length === 0) {
-    return [commands.install]
+  if (commandType === 'install') {
+    // 安装命令逻辑
+    if (packages.length === 0) return [commands.install]
+    return [commands.add, ...packages, ...(options.dev ? [commands.devFlag] : [])]
   }
 
-  const baseArgs = commands.add.split(' ')
-  return [...baseArgs, ...packages, ...(options.dev ? [commands.devFlag] : [])]
+  if (commandType === 'remove') {
+    // 移除命令逻辑
+    return [commands.remove, ...packages]
+  }
+
+  throw new Error(`未知的命令类型: ${commandType}`)
 }
