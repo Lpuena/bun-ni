@@ -30,9 +30,12 @@ bun add -g bun-ni
 |------|----------|------|
 | `bi` | 安装依赖 | `bi lodash` |
 | `br` | 移除依赖 | `br lodash` |
-| `bn`  | 显示帮助 | `bn` |
+| `bd` | 启动开发服务器 | `bd` |
+| `bn` | 显示帮助 | `bn` |
 
 ## 进阶用法
+
+### bi
 
 ```bash
 # 安装开发依赖
@@ -40,9 +43,23 @@ bi typescript -D
 
 # 同时安装多个包
 bi lodash @types/node
+```
 
+### br
+
+```bash
 # 移除多个包
 br eslint prettier
+```
+
+### bd
+
+```bash
+# 启动开发服务器
+bd
+# 指定端口号
+bd -p 3000
+bd --port 3000
 ```
 
 ## 技术架构

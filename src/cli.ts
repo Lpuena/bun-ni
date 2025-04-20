@@ -26,6 +26,7 @@ program
   ${colors.normal('快捷命令:')}
   ${colors.command('bi <package>')}   install package
   ${colors.command('br <package>')}   remove package
+  ${colors.command('bd')}             run dev
     `)
   })
 
@@ -34,8 +35,10 @@ program.addHelpText(
   'afterAll',
   `
 ${colors.primary('示例:')}
-  ${colors.command('bi lodash')}      使用自动检测的包管理器安装 lodash
-  ${colors.command('br lodash')}      移除 lodash
+  ${colors.command('bi lodash')}      install the lodash package
+  ${colors.command('br lodash')}      remove the lodash package
+  ${colors.command('bd')}             run dev mode
+  ${colors.command('bn')}             show help information
 `,
 )
 

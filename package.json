@@ -24,7 +24,8 @@
   "bin": {
     "bn": "./src/main.ts",
     "bi": "./src/commands/install.ts",
-    "br": "./src/commands/remove.ts"
+    "br": "./src/commands/remove.ts",
+    "bd": "./src/commands/runDev.ts"
   },
   "files": [
     "src/**/*.ts"
