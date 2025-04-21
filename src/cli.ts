@@ -23,7 +23,7 @@ program
     )
 
     console.log(`
-  ${colors.normal('快捷命令:')}
+  ${colors.normal('Quick Commands:')}
   ${colors.command('bi <package>')}   install package
   ${colors.command('br <package>')}   remove package
   ${colors.command('bd')}             run dev
